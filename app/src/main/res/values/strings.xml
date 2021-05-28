@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Grinka quest</string>
+    <string name="greeting_title">
+        Привіт!\n\n
+        Я - творіння молодої FLL-команди \n<font fgcolor='#009ed1'>СИНЯ ГРІНКА З ПОПІДВИПІДВЕРТОМ!</font>
+    </string>
+    <string name="greeting">
+               Чим я можу бути корисним для тебе ?\n
+               Допоможу тобі провести своє дозвілля активно та цікаво!\n
+               Готовий?\n
+               Тоді погнали досліджувати Львів!
+    </string>
+    <string name="fragment_quest_bottom_button_state_not_started">Розпочинаємо!</string>
+    <string name="fragment_quest_bottom_button_state_in_progress">Код знайдено! Запустити сканер!</string>
+    <string name="fragment_quest_bottom_button_state_finished">Вау! Хочу ще квестів!</string>
+    <string name="scanner_error">Упс! Наш сканер не розпізнав QR код...</string>
+</resources>
