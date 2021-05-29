@@ -17,8 +17,7 @@ class StorageImpl(context: Context) : Storage {
         saveInt(questId, step)
     }
 
-    override fun getQuestStep(questId: String): Int = 10
-    //sharedPreferences.getInt(questId, DEFAULT_STEP_VALUE)
+    override fun getQuestStep(questId: String): Int = sharedPreferences.getInt(questId, DEFAULT_STEP_VALUE)
 
     override fun shouldShowGreeting() =
         sharedPreferences.getBoolean(GREETINGS_SHOWN_KEY, true)

@@ -6,7 +6,18 @@ import timber.log.Timber
 
 class QuestRepositoryImpl(private val storage: Storage) : QuestRepository {
 
-    private val questsData = listOf(historyQuest, forestQuest, horrorQuest, altitudeQuest, memoQuest, hedgehogQuest)
+    private val questsData = listOf(
+        grinkaQuest,
+        zooQuest,
+        flowersQuest,
+        historyQuest,
+        forestQuest,
+        horrorQuest,
+        altitudeQuest,
+        memoQuest,
+        hedgehogQuest,
+        romanticQuest
+    )
 
     override fun getQuests() = questsData.map { Quest(it, storage.getQuestStep(it.id)) }
 
@@ -14,16 +25,11 @@ class QuestRepositoryImpl(private val storage: Storage) : QuestRepository {
         storage.setQuestStep(id, getQuestStep(id) + 1)
     }
 
-    override fun getQuestStep(id: String): Int {
-        return getQuests().firstOrNull { it.questData.id == id }?.stepNumber ?: -1
-    }
+    override fun getQuestStep(id: String) = getQuests().firstOrNull { it.questData.id == id }?.stepNumber ?: -1
 
     override fun setQuestStep(id: String, step: Int) {
         storage.setQuestStep(id, step)
     }
 
-    override fun getQuest(id: String): Quest? {
-        Timber.d("GetQuestUd " + id + " stepNum " + getQuests().firstOrNull { it.questData.id == id }?.stepNumber)
-        return getQuests().firstOrNull { it.questData.id == id }
-    }
+    override fun getQuest(id: String) = getQuests().firstOrNull { it.questData.id == id }
 }
